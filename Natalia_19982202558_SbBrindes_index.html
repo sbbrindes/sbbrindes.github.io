@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SB Brindes | Brindes Corporativos Personalizados e Criativos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #0056b3; /* Azul mais vibrante para a marca */
+            --secondary-color: #003366; /* Azul escuro para contraste */
+            --accent-color: #ff6f00; /* Laranja para destaque de CTAs */
+            --light-bg: #f5fafd; /* Fundo mais claro e suave */
+            --dark-text: #2c3e50; /* Texto escuro para legibilidade */
+            --light-text: #ecf0f1; /* Texto claro para fundos escuros */
+            --border-radius: 8px;
+            --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            --whatsapp-green: #25d366; /* Cor oficial do WhatsApp */
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: var(--light-bg);
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--secondary-color);
+            margin-top: 0;
+            font-weight: 700;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--primary-color);
+            color: var(--light-text);
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header .logo-container {
+            margin-bottom: 10px;
+            display: none; /* Oculta a área do logo */
+        }
+
+        header .logo-container img {
+            max-width: 250px; /* Ajuste o tamanho máximo do seu logo aqui */
+            height: auto;
+            display: block;
+            margin: 0 auto; /* Centraliza o logo */
+        }
+
+        header h1 {
+            color: var(--light-text);
+            margin: 0;
+            font-size: 2.5em;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 1.1em;
+            margin: 5px 0 0;
+        }
+
+        /* Nav */
+        nav {
+            background: var(--secondary-color);
+            color: var(--light-text);
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.95em;
+            flex-wrap: wrap; /* Para responsividade */
+            gap: 15px; /* Espaço entre os itens */
+        }
+
+        nav .nav-items {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        nav .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        nav a {
+            color: var(--light-text);
+            font-weight: 600;
+            padding: 5px 10px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: linear-gradient(rgba(0, 64, 128, 0.8), rgba(0, 64, 128, 0.8)), url('https://i.imgur.com/rqVkYUp.jpeg') center/cover no-repeat;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 400px;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            max-width: 700px;
+            opacity: 0.9;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        .hero .cta-group {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .hero .btn {
+            background: var(--accent-color);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero .btn:hover {
+            background: #e65c00;
+            transform: translateY(-2px);
+        }
+
+        .hero .btn-secondary {
+            background: none;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .hero .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Section General */
+        .section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .section:nth-child(even) {
+            background: #eaf6ff;
+        }
+
+        .section h2 {
+            font-size: 2.8em;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        /* Destaques (Por que escolher) */
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            text-align: left;
+            margin-top: 40px;
+        }
+
+        .highlight-item {
+            background: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .highlight-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .highlight-item h3 {
+            color: var(--accent-color);
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .highlight-item p {
+            color: #555;
+            font-size: 1.05em;
+        }
+
+        /* Catálogo de Brindes */
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .brinde-categoria {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+            text-align: left;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brinde-categoria:hover {
+            transform: translateY(-5px);
+        }
+
+        .brinde-categoria-content {
+            padding: 25px;
+            flex-grow: 1;
+        }
+
+        .brinde-categoria h3 {
+            color: var(--primary-color);
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .brinde-categoria p {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .catalog-images-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-top: 1px solid #eee;
+        }
+
+        .catalog-images-grid img {
+            width: 100%;
+            height: 120px;
+            object-fit: contain;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Depoimentos */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        blockquote {
+            background: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin: 0;
+            text-align: left;
+            position: relative;
+            font-style: italic;
+            border-left: 5px solid var(--accent-color);
+        }
+
+        blockquote::before {
+            content: "“";
+            font-size: 4em;
+            color: var(--accent-color);
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            opacity: 0.2;
+            line-height: 1;
+        }
+
+        blockquote p {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            color: #444;
+        }
+
+        blockquote footer {
+            text-align: right;
+            font-style: normal;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 15px;
+            padding: 0;
+            background: none;
+            box-shadow: none;
+        }
+
+        /* Formulário de Orçamento */
+        .form-section {
+            background: var(--secondary-color); /* Azul escuro para o fundo da seção */
+            color: var(--light-text);
+            padding: 60px 20px;
+        }
+
+        .form-section h2 {
+            color: white;
+            font-size: 2.8em;
+            margin-bottom: 40px;
+        }
+
+        .formulario {
+            background: white;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            max-width: 700px;
+            margin: auto;
+            text-align: left;
+        }
+
+        .formulario label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark-text);
+        }
+
+        .formulario input,
+        .formulario select,
+        .formulario textarea {
+            width: calc(100% - 20px);
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: var(--border-radius);
+            box-sizing: border-box;
+            font-size: 1em;
+        }
+
+        /* Estilo para o placeholder */
+        .formulario input::placeholder,
+        .formulario select::placeholder,
+        .formulario textarea::placeholder {
+            color: #999;
+            opacity: 1;
+        }
+        .formulario input::-webkit-input-placeholder,
+        .formulario select::-webkit-input-placeholder,
+        .formulario textarea::-webkit-input-placeholder {
+            color: #999;
+        }
+        .formulario input::-moz-placeholder,
+        .formulario select::-moz-placeholder,
+        .formulario textarea::-moz-placeholder {
+            color: #999;
+            opacity: 1;
+        }
+        .formulario input:-ms-input-placeholder,
+        .formulario select:-ms-input-placeholder,
+        .formulario textarea:-ms-input-placeholder {
+            color: #999;
+        }
+        .formulario input::--ms-input-placeholder,
+        .formulario select::--ms-input-placeholder,
+        .formulario textarea::--ms-input-placeholder {
+            color: #999;
+        }
+
+
+        .formulario textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .formulario button {
+            background: var(--accent-color);
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 1.15em;
+            font-weight: 700;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .formulario button:hover {
+            background: #e65c00;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary-color);
+            color: var(--light-text);
+            padding: 30px 0;
+            text-align: center;
+            font-size: 0.9em;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        footer a {
+            color: var(--light-text);
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 25px;
+            right: 25px;
+            background-color: white; /* Fundo branco para o botão flutuante */
+            border: 2px solid var(--whatsapp-green); /* Borda verde oficial */
+            color: var(--whatsapp-green); /* Cor do ícone verde oficial */
+            border-radius: 50%;
+            text-align: center;
+            font-size: 35px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: var(--whatsapp-green); /* Fundo verde no hover */
+            color: white; /* Ícone branco no hover */
+        }
+
+        .whatsapp-float i {
+            font-size: 28px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            .hero p {
+                font-size: 1.1em;
+            }
+
+            .section h2 {
+                font-size: 2em;
+            }
+
+            .hero .cta-group {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .hero .btn {
+                width: 100%;
+            }
+
+            .highlight-item, .brinde-categoria, blockquote {
+                padding: 25px;
+            }
+
+            .formulario {
+                padding: 30px;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+            nav .nav-items {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav .nav-item {
+                flex-direction: row;
+            }
+
+            .catalog-images-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .hero {
+                padding: 60px 15px;
+            }
+
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+
+            .section {
+                padding: 40px 15px;
+            }
+
+            .section h2 {
+                font-size: 1.8em;
+            }
+
+            .formulario {
+                padding: 20px;
+            }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 25px;
+            }
+            .whatsapp-float i {
+                font-size: 22px;
+            }
+
+            .catalog-images-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <img src="https://i.imgur.com/RSP9HcK.png" alt="Logo SB Brindes" />
+            </div>
+            <h1>SB Brindes</h1>
+            <p>Brindes Corporativos Personalizados | Mais de 25 Anos de Mercado</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container nav-items">
+            <div class="nav-item">
+                <a href="https://wa.me/5519982202558?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20brindes%20corporativos%20da%20SB%20Brindes." target="_blank" style="display: flex; align-items: center; gap: 5px;">
+                    <i class="fab fa-whatsapp" style="font-size: 1.1em;"></i>
+                    <span style="font-weight: 600;">(19) 98220-2558 (Natalia)</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="#formulario">✨ Peça seu Orçamento Rápido</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <div class="container">
+            <h1>Brindes Corporativos que Marcam sua Marca!</h1>
+            <p>Surpreenda seus clientes e colaboradores com brindes que transmitem qualidade, criatividade e o profissionalismo que sua empresa merece. Conte com a experiência de quem está há mais de 25 anos no mercado!</p>
+            <div class="cta-group">
+                <a href="#catalogo" class="btn">Explore Nosso Catálogo</a>
+                <a href="#formulario" class="btn btn-secondary">Solicitar Orçamento Personalizado</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="why-us">
+        <div class="container">
+            <h2>Por que escolher a SB Brindes? 👍</h2>
+            <div class="highlights-grid">
+                <div class="highlight-item">
+                    <h3>✅ Experiência Comprovada</h3>
+                    <p>Mais de 25 anos de atuação no mercado, construindo parcerias de sucesso e entregando soluções eficazes.</p>
+                </div>
+                <div class="highlight-item">
+                    <h3>🎁 Milhares de Opções</h3>
+                    <p>Com um catálogo de mais de 5000 itens, temos o brinde ideal para cada necessidade e orçamento.</p>
+                </div>
+                <div class="highlight-item">
+                    <h3>🤝 Atendimento Personalizado</h3>
+                    <p>Oferecemos consultoria especializada para garantir que sua escolha seja perfeita e alinhada aos seus objetivos.</p>
+                </div>
+                <div class="highlight-item">
+                    <h3>🚚 Entrega em Todo o Brasil</h3>
+                    <p>Sua encomenda chega com segurança e pontualidade em qualquer lugar do território nacional.</p>
+                </div>
+                <div class="highlight-item">
+                    <h3>💡 Brindes Criativos e Úteis</h3>
+                    <p>Desenvolvemos soluções inovadoras que realmente encantam e geram valor para sua marca.</p>
+                </div>
+                <div class="highlight-item">
+                    <h3>⏰ Compromisso com Prazos</h3>
+                    <p>Nossa pontualidade é um dos nossos maiores diferenciais, garantindo que seus eventos e campanhas aconteçam sem imprevistos.</p>
+                </div>
+                <div class="highlight-item">
+                    <h3>🏆 Qualidade e Garantia</h3>
+                    <p>Trabalhamos apenas com produtos de alta qualidade e oferecemos garantia, porque sua satisfação é nossa prioridade.</p>
+                </div>
+                <div class="highlight-item">
+                    <h3>📊 Expertise Consolidada</h3>
+                    <p>Nosso "Know-how" e "Expertise" no setor de brindes são a base para o seu sucesso.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="catalogo">
+        <div class="container">
+            <h2>Nosso Catálogo de Brindes 🚀</h2>
+
+            <div class="catalog-grid">
+                <div class="brinde-categoria">
+                    <div class="brinde-categoria-content">
+                        <h3>Para Feiras e Eventos</h3>
+                        <p>Canetas personalizadas, Cadernos, Sacolas ecológicas, Squeezes e uma infinidade de opções para destacar sua marca.</p>
+                    </div>
+                    <div class="catalog-images-grid">
+                        <img src="https://i.imgur.com/rqVkYUp.jpeg" alt="Caneta para Eventos" />
+                        <img src="https://i.imgur.com/vN6WOyA.jpeg" alt="Caderno Personalizado" />
+                        <img src="https://i.imgur.com/UbxfdQW.jpeg" alt="Sacola Ecológica" />
+                        <img src="https://i.imgur.com/Gb7vQUP.jpeg" alt="Squeeze Promocional" />
+                    </div>
+                </div>
+
+                <div class="brinde-categoria">
+                    <div class="brinde-categoria-content">
+                        <h3>Endomarketing e Campanhas Internas</h3>
+                        <p>Kits de boas-vindas, Canecas exclusivas, Mochilas, Bonés, Chaveiros e brindes motivacionais para engajar e valorizar seus colaboradores.</p>
+                    </div>
+                    <div class="catalog-images-grid">
+                        <img src="https://i.imgur.com/JVgSEee.jpeg" alt="Caneca para Endomarketing" />
+                        <img src="https://i.imgur.com/kja1ctT.jpeg" alt="Mochila para Endomarketing" />
+                        <img src="https://i.imgur.com/Rt4lRd3.jpeg" alt="Boné para Endomarketing" />
+                        <img src="https://i.imgur.com/HYOpgba.jpeg" alt="Chaveiro para Endomarketing" />
+                    </div>
+                </div>
+
+                <div class="brinde-categoria">
+                    <div class="brinde-categoria-content">
+                        <h3>Para Todas as Ocasiões Especiais</h3>
+                        <p>Brindes específicos para SIPAT, Outubro Rosa, Novembro Azul, confraternizações e qualquer data comemorativa que sua empresa precisar. Fones de ouvido, Caixas de som, Carregadores por indução, Garrafas de vidro e muito mais.</p>
+                    </div>
+                    <div class="catalog-images-grid">
+                        <img src="https://i.imgur.com/hk9n0PB.jpeg" alt="Fone de Ouvido" />
+                        <img src="https://i.imgur.com/WSXv9wT.jpeg" alt="Caixa de Som" />
+                        <img src="https://i.imgur.com/iSTd9Dq.jpeg" alt="Carregador Indutivo" />
+                        <img src="https://i.imgur.com/90DXDvw.jpeg" alt="Garrafa de Vidro" />
+                    </div>
+                </div>
+
+                <div class="brinde-categoria">
+                    <div class="brinde-categoria-content">
+                        <h3>Brindes Sustentáveis e Ecológicos</h3>
+                        <p>Cadernos recicláveis, Calculadoras ecológicas, Pen Drives ecológicos, Porta Copos de bambu. Itens em bambu, materiais reciclados, ecológicos e outras opções que reforçam o compromisso ambiental da sua marca.</p>
+                    </div>
+                    <div class="catalog-images-grid">
+                        <img src="https://i.imgur.com/WkQjFa4.jpeg" alt="Caderno Sustentável" />
+                        <img src="https://i.imgur.com/7mKah8d.jpeg" alt="Calculadora Sustentável" />
+                        <img src="https://i.imgur.com/Lm4WT8b.jpeg" alt="Pen Drive Sustentável" />
+                        <img src="https://i.imgur.com/YPa6pZc.jpeg" alt="Porta Copos Sustentável" />
+                    </div>
+                </div>
+            </div>
+            <p style="margin-top: 40px; font-size: 1.1em;">Não encontrou o que procura? <a href="#formulario" style="color: var(--accent-color); font-weight: 600;">Fale conosco para uma solução personalizada!</a></p>
+        </div>
+    </div>
+
+    <div class="section" id="testimonials">
+        <div class="container">
+            <h2>O que nossos clientes dizem sobre a SB Brindes ⭐</h2>
+            <div class="testimonials-grid">
+                <blockquote>
+                    <p>“Já fiz algumas parcerias com a SB Brindes e sempre volto!!! A consultoria que eles nos prestam é muito boa, pois quando solicitamos uma "produção" eles realmente nos ajudam para ver se aquilo vai ficar como esperamos e nos orientam para ficarmos satisfeitos e ficamos.</p>
+                    <p>O prazo de entrega quando pedimos dentro do que precisamos eles sempre fazem o possível para nos atender, sempre nos surpreendendo! O valor dentro do mercado é surpreendente, é atrelado à qualidade e entrega! Eu recomendo e já fiz vários tipos de brindes com eles!.”</p>
+                    <footer>– Débora Mailaro Jordão</footer>
+                </blockquote>
+                <blockquote>
+                    <p>“Atendimento excelente! Preços justos e várias opções de brindes! Entregou no tempo combinado, super recomendo!”</p>
+                    <footer>– Marialva Gazzola</footer>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+
+    <div class="section form-section">
+        <div class="container">
+            <h2>Pronto para Receber um Orçamento Imbatível?</h2>
+            <p style="font-size: 1.2em; max-width: 600px; margin: 0 auto 30px; color: white;">Preencha o formulário abaixo e entraremos em contato o mais breve possível para entender sua necessidade e oferecer a melhor solução!</p>
+            <div class="formulario" id="formulario">
+                <form id="orcamentoForm">
+                    <label for="empresa">Nome da Empresa *</label>
+                    <input type="text" id="empresa" placeholder="Sua Empresa" required />
+
+                    <label for="nome">Seu Nome Completo *</label>
+                    <input type="text" id="nome" placeholder="Seu Nome" required />
+
+                    <label for="email">E-mail Profissional *</label>
+                    <input type="email" id="email" placeholder="seu.email@empresa.com.br" required />
+
+                    <label for="whats">WhatsApp (com DDD)</label>
+                    <input type="tel" id="whats" placeholder="(XX) XXXXX-XXXX" />
+
+                    <label for="evento">Tipo de Evento ou Campanha</label>
+                    <input type="text" id="evento" placeholder="Ex: Feira, Confraternização, Ação de Marketing" />
+
+                    <label for="quantidade">Quantidade Estimada de Brindes</label>
+                    <input type="number" id="quantidade" placeholder="Ex: 100, 500, 1000" min="1" />
+
+                    <label for="observacoes">Detalhes Adicionais / Brindes de Interesse</label>
+                    <textarea id="observacoes" placeholder="Conte-nos mais sobre o que você precisa ou qual brinde está buscando."></textarea>
+
+                    <button type="submit">Solicitar Orçamento Agora!</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 1999 - <script>document.write(new Date().getFullYear())</script> SB Brindes | CNPJ 54.435.752/0001-04 | Todos os direitos reservados.</p>
+            <p>
+                <a href="#" target="_blank">Instagram</a> |
+      
+                <a href="https://wa.me/5519982202558" target="_blank">WhatsApp</a>
+            </p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5519982202558?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20brindes%20corporativos%20da%20SB%20Brindes." class="whatsapp-float" target="_blank" aria-label="Fale conosco pelo WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        document.getElementById('orcamentoForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const empresa = document.getElementById('empresa').value.trim();
+            const nome = document.getElementById('nome').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const whats = document.getElementById('whats').value.trim();
+            const evento = document.getElementById('evento').value.trim();
+            const quantidade = document.getElementById('quantidade').value.trim();
+            const observacoes = document.getElementById('observacoes').value.trim();
+
+            if (!empresa || !nome || !email) {
+                alert('Por favor, preencha os campos obrigatórios: Nome da Empresa, Seu Nome e E-mail.');
+                return;
+            }
+
+            let mensagem = `Olá! Gostaria de solicitar um orçamento:%0A%0A`;
+            mensagem += `Empresa: ${empresa}%0A`;
+            mensagem += `Nome: ${nome}%0A`;
+            mensagem += `E-mail: ${email}%0A`;
+            if (whats) mensagem += `WhatsApp: ${whats}%0A`;
+            if (evento) mensagem += `Tipo de Evento: ${evento}%0A`;
+            if (quantidade) mensagem += `Quantidade Estimada: ${quantidade}%0A`;
+            if (observacoes) mensagem += `Observações: ${observacoes}%0A`;
+
+            const url = `https://wa.me/5519982202558?text=${encodeURIComponent(mensagem)}`;
+            window.open(url, '_blank');
+        });
+    </script>
+</body>
+</html>
