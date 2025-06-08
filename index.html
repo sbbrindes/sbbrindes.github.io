@@ -161,7 +161,7 @@
             display: flex;
             gap: 20px;
             flex-wrap: wrap;
-            justify-content: center;
+            justify-content: center; /* Centraliza os botões */
         }
 
         .hero .btn {
@@ -175,6 +175,9 @@
             cursor: pointer;
             transition: background 0.3s ease, transform 0.2s ease;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: auto; /* Para que a largura seja definida pelo conteúdo + padding */
+            flex-grow: 0; /* Não permite que o item cresça */
+            flex-shrink: 0; /* Não permite que o item encolha */
         }
 
         .hero .btn:hover {
@@ -183,13 +186,14 @@
         }
 
         .hero .btn-secondary {
-            background: none;
-            border: 2px solid white;
+            background: #008000; /* Verde mais chamativo para orçamento */
+            border: 2px solid #008000;
             color: white;
         }
 
         .hero .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.2);
+            background: #006400;
+            border-color: #006400;
             color: white;
             transform: translateY(-2px);
         }
@@ -529,12 +533,16 @@
             }
 
             .hero .cta-group {
-                flex-direction: column;
-                gap: 15px;
+                flex-direction: column; /* Coloca os botões em coluna */
+                align-items: center; /* Centraliza os itens na coluna */
             }
 
-            .hero .btn {
-                width: 100%;
+            .hero .cta-group .btn {
+                width: 75%; /* Largura um pouco menor para caber com folga */
+                max-width: 280px; /* Limita a largura máxima */
+                text-align: center;
+                padding: 12px 25px; /* Diminui um pouco o padding */
+                font-size: 1em; /* Diminui um pouco a fonte */
             }
 
             .highlight-item, .brinde-categoria, blockquote {
@@ -652,7 +660,7 @@
                 </div>
                 <div class="highlight-item">
                     <h3>🎁 Milhares de Opções</h3>
-                    <p>Com um catálogo de mais de 5000 itens, temos o brinde ideal para cada necessidade e orçamento.</p>
+                    <p>Com um catálogo vasto, temos o brinde ideal para cada necessidade e orçamento.</p>
                 </div>
                 <div class="highlight-item">
                     <h3>🤝 Atendimento Personalizado</h3>
@@ -673,10 +681,10 @@
                 <div class="highlight-item">
                     <h3>🏆 Qualidade e Garantia</h3>
                     <p>Trabalhamos apenas com produtos de alta qualidade e oferecemos garantia, porque sua satisfação é nossa prioridade.</p>
-                </div>
                 <div class="highlight-item">
                     <h3>📊 Expertise Consolidada</h3>
                     <p>Nosso "Know-how" e "Expertise" no setor de brindes são a base para o seu sucesso.</p>
+                </div>
                 </div>
             </div>
         </div>
@@ -690,7 +698,7 @@
                 <div class="brinde-categoria">
                     <div class="brinde-categoria-content">
                         <h3>Para Feiras e Eventos</h3>
-                        <p>Canetas personalizadas, Cadernos, Sacolas ecológicas, Squeezes e uma infinidade de opções para destacar sua marca.</p>
+                        <p>Canetas personalizadas, Cadernos, Sacolas, Squeezes e uma infinidade de opções para destacar sua marca.</p>
                     </div>
                     <div class="catalog-images-grid">
                         <img src="https://i.imgur.com/rqVkYUp.jpeg" alt="Caneta para Eventos" />
@@ -729,7 +737,7 @@
                 <div class="brinde-categoria">
                     <div class="brinde-categoria-content">
                         <h3>Brindes Sustentáveis e Ecológicos</h3>
-                        <p>Cadernos recicláveis, Calculadoras ecológicas, Pen Drives ecológicos, Porta Copos de bambu. Itens em bambu, materiais reciclados, ecológicos e outras opções que reforçam o compromisso ambiental da sua marca.</p>
+                        <p>Cadernos recicláveis, Calculadoras ecológicas, Pen Drives ecológicos, Porta copos de bambu. Itens em bambu, materiais reciclados, ecológicos e outras opções que reforçam o compromisso ambiental da sua marca.</p>
                     </div>
                     <div class="catalog-images-grid">
                         <img src="https://i.imgur.com/WkQjFa4.jpeg" alt="Caderno Sustentável" />
@@ -797,14 +805,12 @@
         <div class="container">
             <p>&copy; 1999 - <script>document.write(new Date().getFullYear())</script> SB Brindes | CNPJ 54.435.752/0001-04 | Todos os direitos reservados.</p>
             <p>
-                <a href="#" target="_blank">Instagram</a> |
-      
-                <a href="https://wa.me/5519982202558" target="_blank">WhatsApp</a>
+                <a href="https://www.instagram.com/seuperfildoinstagram" target="_blank">Instagram</a> | <a href="https://www.tiktok.com/@suacontadotiktok" target="_blank">TikTok</a> | <a href="https://wa.me/5519982202558" target="_blank">WhatsApp</a>
             </p>
         </div>
     </footer>
 
-    <a href="https://wa.me/5519982202558?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20brindes%20corporativos%20da%20SB%20Brindes." class="whatsapp-float" target="_blank" aria-label="Fale conosco pelo WhatsApp">
+    <a href="https://wa.me/5519982202558?text=Olá! Gostaria de solicitar um orçamento para a SB Brindes." class="whatsapp-float" target="_blank" aria-label="Fale conosco pelo WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -820,22 +826,23 @@
             const quantidade = document.getElementById('quantidade').value.trim();
             const observacoes = document.getElementById('observacoes').value.trim();
 
-            if (!empresa || !nome || !email) {
-                alert('Por favor, preencha os campos obrigatórios: Nome da Empresa, Seu Nome e E-mail.');
-                return;
-            }
+            // Usando %0A para quebra de linha e * para negrito
+            let whatsappMessage = `*SOLICITAÇÃO DE ORÇAMENTO - SB BRINDES*%0A%0A`;
+            whatsappMessage += `Olá, Natalia!%0ARecebi uma nova solicitação de orçamento via Landing Page.%0A%0A`;
+            
+            if (empresa) whatsappMessage += `*Empresa:* ${empresa}%0A`;
+            if (nome) whatsappMessage += `*Nome:* ${nome}%0A`; // Abreviado e com negrito
+            if (email) whatsappMessage += `*E-mail:* ${email}%0A`;
+            if (whats) whatsappMessage += `*WhatsApp:* ${whats}%0A`;
+            if (evento) whatsappMessage += `*Evento:* ${evento}%0A`; // Abreviado e com negrito
+            if (quantidade) whatsappMessage += `*Qtde:* ${quantidade}%0A`; // Abreviado e com negrito
+            if (observacoes) whatsappMessage += `*Detalhes:* ${observacoes}%0A`; // Abreviado e com negrito
 
-            let mensagem = `Olá! Gostaria de solicitar um orçamento:%0A%0A`;
-            mensagem += `Empresa: ${empresa}%0A`;
-            mensagem += `Nome: ${nome}%0A`;
-            mensagem += `E-mail: ${email}%0A`;
-            if (whats) mensagem += `WhatsApp: ${whats}%0A`;
-            if (evento) mensagem += `Tipo de Evento: ${evento}%0A`;
-            if (quantidade) mensagem += `Quantidade Estimada: ${quantidade}%0A`;
-            if (observacoes) mensagem += `Observações: ${observacoes}%0A`;
+            whatsappMessage += `%0A-------------------------------%0A`;
+            whatsappMessage += `*Contato SB Brindes: (19) 98220-2558*`;
 
-            const url = `https://wa.me/5519982202558?text=${encodeURIComponent(mensagem)}`;
-            window.open(url, '_blank');
+            // Abre o WhatsApp
+            window.open(`https://wa.me/5519982202558?text=${whatsappMessage}`, '_blank');
         });
     </script>
 </body>
