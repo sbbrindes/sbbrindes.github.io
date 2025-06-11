@@ -130,18 +130,21 @@
             position: relative;
             background: linear-gradient(rgba(0, 64, 128, 0.8), rgba(0, 64, 128, 0.8)), url('https://i.imgur.com/rqVkYUp.jpeg') center/cover no-repeat;
             color: white;
-            padding: 80px 20px;
+            padding-top: 50px;
+            padding-bottom: 40px;
+            padding-left: 20px;
+            padding-right: 20px;
             text-align: center;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            min-height: 400px;
+            min-height: 350px;
         }
 
         .hero h1 {
             color: white;
-            font-size: 3.5em;
+            font-size: 3.0em;
             margin-bottom: 20px;
             line-height: 1.2;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
@@ -161,7 +164,7 @@
             display: flex;
             gap: 20px;
             flex-wrap: wrap;
-            justify-content: center; /* Centraliza os botões */
+            justify-content: center;
         }
 
         .hero .btn {
@@ -175,9 +178,9 @@
             cursor: pointer;
             transition: background 0.3s ease, transform 0.2s ease;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            width: auto; /* Para que a largura seja definida pelo conteúdo + padding */
-            flex-grow: 0; /* Não permite que o item cresça */
-            flex-shrink: 0; /* Não permite que o item encolha */
+            width: auto;
+            flex-grow: 0;
+            flex-shrink: 0;
         }
 
         .hero .btn:hover {
@@ -186,7 +189,7 @@
         }
 
         .hero .btn-secondary {
-            background: #008000; /* Verde mais chamativo para orçamento */
+            background: #008000;
             border: 2px solid #008000;
             color: white;
         }
@@ -243,6 +246,10 @@
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
         }
 
         .highlight-item:hover {
@@ -262,6 +269,7 @@
         .highlight-item p {
             color: #555;
             font-size: 1.05em;
+            flex-grow: 1;
         }
 
         /* Catálogo de Brindes */
@@ -370,7 +378,7 @@
 
         /* Formulário de Orçamento */
         .form-section {
-            background: var(--secondary-color); /* Azul escuro para o fundo da seção */
+            background: var(--secondary-color);
             color: var(--light-text);
             padding: 60px 20px;
         }
@@ -520,12 +528,19 @@
 
         /* Responsividade */
         @media (max-width: 768px) {
+            .hero {
+                padding-top: 30px;
+                padding-bottom: 20px;
+                min-height: 280px;
+            }
+
             .hero h1 {
-                font-size: 2.5em;
+                font-size: 2.2em;
             }
 
             .hero p {
-                font-size: 1.1em;
+                font-size: 1em;
+                margin-bottom: 20px;
             }
 
             .section h2 {
@@ -533,16 +548,16 @@
             }
 
             .hero .cta-group {
-                flex-direction: column; /* Coloca os botões em coluna */
-                align-items: center; /* Centraliza os itens na coluna */
+                flex-direction: column;
+                align-items: center;
             }
 
             .hero .cta-group .btn {
-                width: 75%; /* Largura um pouco menor para caber com folga */
-                max-width: 280px; /* Limita a largura máxima */
+                width: 85%;
+                max-width: 300px;
                 text-align: center;
-                padding: 12px 25px; /* Diminui um pouco o padding */
-                font-size: 1em; /* Diminui um pouco a fonte */
+                padding: 12px 25px;
+                font-size: 1em;
             }
 
             .highlight-item, .brinde-categoria, blockquote {
@@ -576,15 +591,18 @@
             }
 
             .hero {
-                padding: 60px 15px;
+                padding-top: 25px;
+                padding-bottom: 15px;
+                min-height: 260px;
             }
 
             .hero h1 {
-                font-size: 2em;
+                font-size: 1.8em;
             }
 
             .hero p {
-                font-size: 1em;
+                font-size: 0.9em;
+                margin-bottom: 15px;
             }
 
             .section {
@@ -660,7 +678,7 @@
                 </div>
                 <div class="highlight-item">
                     <h3>🎁 Milhares de Opções</h3>
-                    <p>Com um catálogo vasto, temos o brinde ideal para cada necessidade e orçamento.</p>
+                    <p>Com um catálogo de 5000+ itens, temos o brinde ideal para cada necessidade e orçamento.</p>
                 </div>
                 <div class="highlight-item">
                     <h3>🤝 Atendimento Personalizado</h3>
@@ -681,10 +699,10 @@
                 <div class="highlight-item">
                     <h3>🏆 Qualidade e Garantia</h3>
                     <p>Trabalhamos apenas com produtos de alta qualidade e oferecemos garantia, porque sua satisfação é nossa prioridade.</p>
+                </div>
                 <div class="highlight-item">
                     <h3>📊 Expertise Consolidada</h3>
                     <p>Nosso "Know-how" e "Expertise" no setor de brindes são a base para o seu sucesso.</p>
-                </div>
                 </div>
             </div>
         </div>
@@ -829,14 +847,14 @@
             // Usando %0A para quebra de linha e * para negrito
             let whatsappMessage = `*SOLICITAÇÃO DE ORÇAMENTO - SB BRINDES*%0A%0A`;
             whatsappMessage += `Olá, Natalia!%0ARecebi uma nova solicitação de orçamento via Landing Page.%0A%0A`;
-            
+
             if (empresa) whatsappMessage += `*Empresa:* ${empresa}%0A`;
-            if (nome) whatsappMessage += `*Nome:* ${nome}%0A`; // Abreviado e com negrito
+            if (nome) whatsappMessage += `*Nome:* ${nome}%0A`;
             if (email) whatsappMessage += `*E-mail:* ${email}%0A`;
             if (whats) whatsappMessage += `*WhatsApp:* ${whats}%0A`;
-            if (evento) whatsappMessage += `*Evento:* ${evento}%0A`; // Abreviado e com negrito
-            if (quantidade) whatsappMessage += `*Qtde:* ${quantidade}%0A`; // Abreviado e com negrito
-            if (observacoes) whatsappMessage += `*Detalhes:* ${observacoes}%0A`; // Abreviado e com negrito
+            if (evento) whatsappMessage += `*Evento:* ${evento}%0A`;
+            if (quantidade) whatsappMessage += `*Qtde:* ${quantidade}%0A`;
+            if (observacoes) whatsappMessage += `*Detalhes:* ${observacoes}%0A`;
 
             whatsappMessage += `%0A-------------------------------%0A`;
             whatsappMessage += `*Contato SB Brindes: (19) 98220-2558*`;
