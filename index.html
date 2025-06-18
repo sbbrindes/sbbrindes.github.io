@@ -2,26 +2,23 @@
 <html lang="pt-BR">
 <head>
 
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17195561863"></script>
+    <script async
+src="https://www.googletagmanager.com/gtag/js?id=AW-17195561863"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
 
-  gtag('config', 'AW-17195561863');
+ gtag('config', 'AW-17195561863');
 </script>
 
-<!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+new
+Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-NRNHQQGQ');</script>
-<!-- End Google Tag Manager -->
-
-
-    <meta charset="UTF-8" />
+<meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SB Brindes | Brindes Corporativos Personalizados e Criativos</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -196,11 +193,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             font-size: 1.1em;
             font-weight: 600;
             cursor: pointer;
-            transition: background 0.3s ease, transform 0.2s ease;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             width: auto;
             flex-grow: 0;
             flex-shrink: 0;
+            transition: background 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         .hero .btn:hover {
@@ -398,19 +395,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         /* Formulário de Orçamento */
         .form-section {
-            background: var(--secondary-color);
-            color: var(--light-text);
+            background-color: var(--secondary-color) !important; /* Força o azul escuro */
+            color: var(--light-text) !important; /* Força o texto claro para toda a seção */
             padding: 60px 20px;
         }
 
         .form-section h2 {
-            color: white;
+            color: white !important; /* Garante que o título seja branco */
             font-size: 2.8em;
             margin-bottom: 40px;
         }
 
+        .form-section p { /* Adicionado para garantir o parágrafo branco */
+            color: white !important;
+        }
+
         .formulario {
-            background: white;
+            background: white !important; /* Garante que o formulário continue branco */
             padding: 40px;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
@@ -423,7 +424,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             display: block;
             margin-bottom: 8px;
             font-weight: 600;
-            color: var(--dark-text);
+            color: var(--dark-text) !important; /* Garante que o texto da label seja escuro */
         }
 
         .formulario input,
@@ -436,6 +437,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             border-radius: var(--border-radius);
             box-sizing: border-box;
             font-size: 1em;
+            color: var(--dark-text) !important; /* Garante que o texto digitado seja escuro */
         }
 
         /* Estilo para o placeholder */
@@ -654,13 +656,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </head>
 <body>
 
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NRNHQQGQ"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
-
-    <header>
+<noscript><iframe
+src="https://www.googletagmanager.com/ns.html?id=GTM-NRNHQQGQ"
+height="0"
+width="0"
+style="display:none;visibility:hidden"></iframe></noscript>
+<header>
         <div class="container">
             <div class="logo-container">
                 <img src="https://i.imgur.com/RSP9HcK.png" alt="Logo SB Brindes" />
@@ -887,7 +888,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             whatsappMessage += `*Contato SB Brindes: (19) 98220-2558*`;
 
             // Abre o WhatsApp
-            window.open(`https://wa.me/5519982202558?text=${whatsappMessage}`, '_blank');
+            window.open(`https://wa.me/5519982202558?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
         });
     </script>
 </body>
