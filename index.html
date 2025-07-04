@@ -690,7 +690,7 @@ style="display:none;visibility:hidden"></iframe></noscript>
             <h1>Brindes Corporativos que Marcam sua Marca!</h1>
             <p>Surpreenda seus clientes e colaboradores com brindes que transmitem qualidade, criatividade e o profissionalismo que sua empresa merece. Conte com a experiência de quem está há mais de 25 anos no mercado!</p>
             <div class="cta-group">
-                <a href="#catalogo" class="btn">Explore Nosso Catálogo</a>
+                <a href="https://www.sbbrindes.com.br/site/" class="btn" target="_blank">Explore Nosso Catálogo</a>
                 <a href="#formulario" class="btn btn-secondary">Solicitar Orçamento Personalizado</a>
             </div>
         </div>
@@ -787,7 +787,7 @@ style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                     <div class="catalog-images-grid">
                         <img src="https://i.imgur.com/WkQjFa4.jpeg" alt="Caderno Sustentável" />
-                        <img src="https://i.imgur.com/7mKah8d.jpeg" alt="Calculadora Sustentável" />
+                        <img src="https://i.imgur.com/7mKah8b.jpeg" alt="Calculadora Sustentável" />
                         <img src="https://i.imgur.com/Lm4WT8b.jpeg" alt="Pen Drive Sustentável" />
                         <img src="https://i.imgur.com/YPa6pZc.jpeg" alt="Porta Copos Sustentável" />
                     </div>
@@ -851,7 +851,10 @@ style="display:none;visibility:hidden"></iframe></noscript>
         <div class="container">
             <p>&copy; 1999 - <script>document.write(new Date().getFullYear())</script> SB Brindes | CNPJ 54.435.752/0001-04 | Todos os direitos reservados.</p>
             <p>
-                <a href="https://www.instagram.com/seuperfildoinstagram" target="_blank">Instagram</a> | <a href="https://www.tiktok.com/@suacontadotiktok" target="_blank">TikTok</a> | <a href="https://wa.me/5519982202558" target="_blank">WhatsApp</a>
+                <a href="https://www.instagram.com/sbbrindespersonalizados/" target="_blank">Instagram</a> |
+                <a href="https://www.tiktok.com/@sbbrindes?lang=pt-BR" target="_blank">TikTok</a> |
+                <a href="https://wa.me/5519982202558" target="_blank">WhatsApp</a> |
+                <a href="https://www.sbbrindes.com.br/site/" target="_blank">Nosso Site</a>
             </p>
         </div>
     </footer>
@@ -872,22 +875,22 @@ style="display:none;visibility:hidden"></iframe></noscript>
             const quantidade = document.getElementById('quantidade').value.trim();
             const observacoes = document.getElementById('observacoes').value.trim();
 
-            // Usando %0A para quebra de linha e * para negrito
-            let whatsappMessage = `*SOLICITAÇÃO DE ORÇAMENTO - SB BRINDES*%0A%0A`;
-            whatsappMessage += `Olá, Natalia!%0ARecebi uma nova solicitação de orçamento via Landing Page.%0A%0A`;
+            // Construa a mensagem com quebras de linha usando \n
+            let whatsappMessage = `*SOLICITAÇÃO DE ORÇAMENTO - SB BRINDES*\n\n`;
+            whatsappMessage += `Olá, Natalia!\nRecebi uma nova solicitação de orçamento via Landing Page.\n\n`;
 
-            if (empresa) whatsappMessage += `*Empresa:* ${empresa}%0A`;
-            if (nome) whatsappMessage += `*Nome:* ${nome}%0A`;
-            if (email) whatsappMessage += `*E-mail:* ${email}%0A`;
-            if (whats) whatsappMessage += `*WhatsApp:* ${whats}%0A`;
-            if (evento) whatsappMessage += `*Evento:* ${evento}%0A`;
-            if (quantidade) whatsappMessage += `*Qtde:* ${quantidade}%0A`;
-            if (observacoes) whatsappMessage += `*Detalhes:* ${observacoes}%0A`;
+            if (empresa) whatsappMessage += `*Empresa:* ${empresa}\n`;
+            if (nome) whatsappMessage += `*Nome:* ${nome}\n`;
+            if (email) whatsappMessage += `*E-mail:* ${email}\n`;
+            if (whats) whatsappMessage += `*WhatsApp:* ${whats}\n`;
+            if (evento) whatsappMessage += `*Evento:* ${evento}\n`;
+            if (quantidade) whatsappMessage += `*Qtde:* ${quantidade}\n`;
+            if (observacoes) whatsappMessage += `*Detalhes:* ${observacoes}\n`;
 
-            whatsappMessage += `%0A-------------------------------%0A`;
+            whatsappMessage += `\n-------------------------------\n`;
             whatsappMessage += `*Contato SB Brindes: (19) 98220-2558*`;
 
-            // Abre o WhatsApp
+            // Use encodeURIComponent para codificar a URL inteira
             window.open(`https://wa.me/5519982202558?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
         });
     </script>
